@@ -1,6 +1,7 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:todo_app/shared/component/custom_task_item.dart';
 import 'package:todo_app/shared/cubit/cubit.dart';
 import 'package:todo_app/shared/style/colors.dart';
@@ -22,8 +23,8 @@ class DoneTaskScreen extends StatelessWidget {
             itemCount:tasks.length,
             itemBuilder: (context, index) => customTaskItem(tasks[index] , context) ,
             separatorBuilder: (context, index) => Container(
-              margin:const EdgeInsets.symmetric(horizontal: 20),
-              height: 1,
+              margin: EdgeInsets.symmetric(horizontal: 20.w),
+              height: 1.h,
               width: double.infinity,
               color: Colors.grey[300],
             ),
@@ -34,15 +35,15 @@ class DoneTaskScreen extends StatelessWidget {
               children: [
                 Icon(
                   Icons.menu,
-                  size: 100,
+                  size: 100.sp,
                   color: primaryColor,
                 ),
-                const SizedBox(height: 5,),
+                 SizedBox(height: 5.h,),
                 Text(
                   "No Tasks yet , Please Add Some Tasks",
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 18,
+                      fontSize: 18.sp,
                       color: primaryColor
                   ),
                 )

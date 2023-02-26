@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // class CustomStatelessTextField extends StatelessWidget {
 //   const CustomStatelessTextField(
@@ -83,30 +84,30 @@ Widget customStatelessTextField({
     },
     keyboardType: keyType,
     controller: controller,
-    style: const TextStyle(
+    style:  TextStyle(
         color: Colors.white,
         //fontWeight: FontWeight.bold,
-        fontSize: 20),
+        fontSize: 20.sp),
     decoration: InputDecoration(
       prefixIcon: prefix,
       floatingLabelStyle: const TextStyle(color: Colors.white),
       enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(30.sp),
           borderSide: const BorderSide(color: Colors.white)),
       focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(30),
+          borderRadius: BorderRadius.circular(30.sp),
           borderSide: const BorderSide(color: Colors.white)),
       border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(30.sp),
       ),
       //label: Text(text!),
       hintText: hintText,
       hintStyle: const TextStyle(
           color: Colors.white
       ),
-      labelStyle: const TextStyle(
+      labelStyle:  TextStyle(
         color: Colors.white,
-        fontSize: 20,
+        fontSize: 20.sp,
         // fontWeight: FontWeight.bold
       ),
 

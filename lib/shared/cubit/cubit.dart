@@ -62,9 +62,7 @@ class AppCubit extends Cubit<AppStates>{
     });
   }
   void getDataFromDatabase (database){
-     newTasks = [];
-     doneTasks = [];
-     archivedTasks = [];
+     newTasks = []; doneTasks = [];archivedTasks = [];
      emit(AppGetDatabaseState());
      database.rawQuery("select * from tasks").then((value){
        value.forEach((element) {

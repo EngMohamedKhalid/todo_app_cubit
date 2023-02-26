@@ -3,6 +3,7 @@
 import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:todo_app/shared/component/custom_text_field.dart';
 import 'package:todo_app/shared/cubit/cubit.dart';
@@ -17,7 +18,6 @@ class HomeLayout extends StatelessWidget {
   final TextEditingController titleCont = TextEditingController();
   final TextEditingController timeCont = TextEditingController();
   final TextEditingController dateCont = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -41,38 +41,38 @@ class HomeLayout extends StatelessWidget {
             centerTitle: true,
             title: Text(
               cubit.listTitles[cubit.currentIndex],
-              style: const TextStyle(
-                fontSize: 22,
+              style:  TextStyle(
+                fontSize: 22.sp,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
           bottomNavigationBar: BottomNavigationBar(
             selectedItemColor: primaryColor,
-            selectedFontSize: 18,
+            selectedFontSize: 18.sp,
             currentIndex: cubit.currentIndex,
             onTap: (value) {
               cubit.changeCurrent(value);
             },
             type: BottomNavigationBarType.fixed,
-            items: const [
+            items:  [
               BottomNavigationBarItem(
                   icon: Icon(
                     Icons.menu,
-                    size: 35,
+                    size: 35.sp,
                   ),
                   label: "Tasks"
               ),
               BottomNavigationBarItem(
                   icon: Icon(
                     Icons.done,
-                    size: 35,
+                    size: 35.sp,
                   ),
                   label: "Done"),
               BottomNavigationBarItem(
                   icon: Icon(
                     Icons.archive,
-                    size: 35,
+                    size: 35.sp,
                   ),
                   label: "Archived"),
             ],
@@ -113,10 +113,10 @@ class HomeLayout extends StatelessWidget {
                                 controller: titleCont,
                                 keyType: TextInputType.text,
                                 hintText: "Task title",
-                                padding:const EdgeInsets.only(top: 5 ,right: 15,left: 15,bottom: 10),
-                                prefix: const Icon(
+                                padding: EdgeInsets.only(top: 5.h ,right: 15.w,left: 15.w,bottom: 10.h),
+                                prefix:  Icon(
                                   Icons.title,
-                                  size: 28,
+                                  size: 28.sp,
                                   color: Colors.white,
                                 ),
                                 onTap: () {},
@@ -126,9 +126,9 @@ class HomeLayout extends StatelessWidget {
                                 keyType: TextInputType.none,
                                 hintText: "Task time",
                                 padding:const EdgeInsets.only(right: 15,left: 15,bottom: 10),
-                                prefix: const Icon(
+                                prefix:  Icon(
                                   Icons.watch_later_sharp,
-                                  size: 28,
+                                  size: 28.sp,
                                   color: Colors.white,
                                 ),
                                 onTap: () {
@@ -145,9 +145,9 @@ class HomeLayout extends StatelessWidget {
                                 keyType: TextInputType.none,
                                 hintText: "Task date",
                                 padding:const EdgeInsets.only(right: 15,left: 15,bottom: 10),
-                                prefix: const Icon(
+                                prefix:  Icon(
                                   Icons.date_range_sharp,
-                                  size: 28,
+                                  size: 28.sp,
                                   color: Colors.white,
                                 ),
                                 onTap: () {
@@ -174,14 +174,14 @@ class HomeLayout extends StatelessWidget {
               }
             },
             child:cubit.isBottomSheetOpened?
-            const Icon(
+             Icon(
               Icons.add_circle_sharp,
-              size: 35,
+              size: 35.sp,
             )
                 :
-            const Icon(
+             Icon(
               Icons.edit_sharp,
-              size: 35,
+              size: 35.sp,
             )
             ,
           ),
